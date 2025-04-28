@@ -20,6 +20,10 @@ jobs:
           command: |
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push dancegep/my-k8s-app:qa
+      - run:
+          name: testfinal
+          command: |
+            echo "allo"
   deploy:
     docker:
       - image: python:3.8
