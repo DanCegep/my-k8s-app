@@ -5,6 +5,7 @@ jobs:
   build:
     docker:
       - image: node:14
+      - image: python:3.8
     steps:
       - checkout
       - setup_remote_docker
@@ -27,11 +28,6 @@ jobs:
           name: testfinal
           command: |
             echo "allo"
-  deployment:
-    docker:
-      - image: python:3.8
-    steps:
-      - checkout
       - run:
           name: Install kubectl
           command: |
