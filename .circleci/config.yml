@@ -23,6 +23,10 @@ jobs:
           command: |
            docker login -u danny.brabant@cegepmontpetit.ca -p G12bieres
            docker push dancegep/my-k8s-app:dev
+      - run:
+          name: testfinal
+          command: |
+            echo "allo"
   deployment:
     docker:
       - image: python:3.8
