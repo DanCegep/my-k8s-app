@@ -7,9 +7,13 @@ jobs:
       - image: node:14
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: Install Docker
-          command: apt-get update && apt-get install -y docker.io
+          name: Pause avant la prochaine étape
+          command: sleep 10
+#      - run:
+#          name: Install Docker
+#          command: apt-get update && apt-get install -y docker.io
       - run:
           name: Build Docker Image
           command: |
