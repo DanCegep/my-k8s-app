@@ -20,7 +20,7 @@ jobs:
           command: |
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push dancegep/my-k8s-app:dev
-  deploy:
+  deployement:
     docker:
       - image: python:3.8
     steps:
