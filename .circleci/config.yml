@@ -21,8 +21,8 @@ jobs:
       - run:
           name: Push Docker Image
           command: |
-           docker login -u danny.brabant@cegepmontpetit.ca -p G12bieres
-           docker push dancegep/my-k8s-app:dev
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+            docker push docker.io/dancegep/my-k8s-app:dev
       - run:
           name: testfinal
           command: |
@@ -43,3 +43,4 @@ jobs:
           command: |
             kubectl set image deployment/my-k8s-deployment my-k8s-app=dancegep/my-k8s-app:dev
 #test
+#           docker login -u danny.brabant@cegepmontpetit.ca -p G12bieres
