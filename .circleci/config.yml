@@ -42,5 +42,5 @@ jobs:
           name: Deploy to Kubernetes
           command: |
             kubectl set image deployment/my-k8s-deployment my-k8s-app=dancegep/my-k8s-app:dev
-#test
+#test2
 #           docker login -u danny.brabant@cegepmontpetit.ca -p G12bieres
