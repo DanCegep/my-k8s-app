@@ -9,9 +9,6 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-#      - run:
-#          name: Pause avant la prochaine étape
-#          command: sleep 10
       - run:
           name: Install Docker
           command: apt-get update && apt-get install -y docker.io
