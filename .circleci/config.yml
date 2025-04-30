@@ -21,10 +21,11 @@ jobs:
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
             docker push docker.io/dancegep/my-k8s-app:dev
-      - run:
-          name: testfinal
-          command: |
-            echo "allo"
+  deploy:
+    docker:
+      - image: python:3.8
+    steps:
+      - checkout
       - run:
           name: Install kubectl
           command: |
